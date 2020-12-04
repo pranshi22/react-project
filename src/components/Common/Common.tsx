@@ -61,16 +61,26 @@ function Common() {
         <div className="common-module">
             <header><h1 className="header-elem" role="heading">HVC</h1></header>
             <div className="main-container">
-                <div className="changing-div">
+                <div>
                     <label className="page-name">{pageName[step]}</label>
+                    <div className="changing-div">
                     <div className="tab-container">
                         {pageName.map((value, index) => <div key={value} className={step === index ? "active tabs" : "tabs"}>
                             {String(index+1)+". "+value}
                         </div>
                         )}
                     </div>
-                    <Image images={images} setImages={setImages} setproceedDisable={setproceedDisable}/>
+                    <Image hidden={step!==0} images={images} setImages={setImages} setproceedDisable={setproceedDisable}/>
                 </div>
+                </div>
+                
+                <select name="region" id="region" className="select-region">
+                    <option value="us-east-1">us-east-1</option>
+                    <option value="us-east-2">us-east-2</option>
+                    <option value="us-west-1">us-west-1</option>
+                    <option value="india-1">india-1</option>
+                </select>
+                
                 <div className="cost-card">
                     <label className="cost-heading">Cost Estimates</label>
                 </div>

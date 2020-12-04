@@ -52,8 +52,8 @@
 
 .main-container{
     display: grid;
-    grid-template-columns: 70% 30%;
-    margin-top: 60px;
+    grid-template-columns: 50% 20% 30%;
+    /* margin-top: 60px; */
     height: fit-content;
 }
 
@@ -63,6 +63,7 @@
     background: #FFFFFF;
     box-shadow: 0px 3px 6px 2px rgba(0,0,0,.3);
     padding: 15px;
+    margin-top: 2rem;
     border-radius: 5px;
 }
 
@@ -145,4 +146,17 @@ transform: translateY(4px);
 .back-btn:active {
 border: hidden;
 transform: translateY(4px);
+}
+
+.select-region{
+    width: 11rem;
+    margin-top: 2rem;
+    height: 2rem;
+    margin-left: 2rem;
+    font-size: 14px;
+    color: #007EFF;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1rem;
+    border-radius: 0.4rem;
 }

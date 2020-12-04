@@ -4,7 +4,8 @@ import './Image.css'
 function Image(props:{
     images: {id: string, name: string, desc: string, type: string, state: boolean}[], 
     setImages: any,
-    setproceedDisable:any    
+    setproceedDisable:any,
+    hidden: boolean    
 }) {
 
     const imageType = [
@@ -24,7 +25,7 @@ function Image(props:{
     }
 
     return(
-        <div className="image-container">
+        <div hidden={props.hidden} className="image-container">
             {props.images.map(imageItem => {
                 return (
                     <div className="image-cards" key={"main"+imageItem.id}>
