@@ -98,7 +98,8 @@ export default function DisplayArea(props: {
                     setStep={props.setStep} pageNameList={props.pageNameList}
                     imageCost={props.imageCost} setImageCost={props.setImageCost}
                     selectedInstaces={props.selectedInstaces} storageCard={props.storageCard}
-                    bandwidth={props.bandwidth} />
+                    bandwidth={props.bandwidth} setStorageCard={props.setStorageCard}
+                    setBandwidth={props.setBandwidth} />
             );
     }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from '../Image/Image'
+import StorageAndNetwork from '../StorageAndNetwork/StorageAndNetwork';
 import "./ReviewAndLaunch.css"
 
 function ReviewAndLaunch(props: {
@@ -44,10 +45,25 @@ function ReviewAndLaunch(props: {
         Remarks: string;
         cost: number;
     }[],
+    setStorageCard: React.Dispatch<React.SetStateAction<{
+        id: string;
+        type: string;
+        Volume: string;
+        Capacity: number;
+        Encryption: boolean;
+        IOPS: number;
+        BackupRequired: boolean;
+        Remarks: string;
+        cost: number;
+    }[]>>,
     bandwidth: {
         value: number;
         cost: number;
     },
+    setBandwidth: React.Dispatch<React.SetStateAction<{
+        value: number;
+        cost: number;
+    }>>
 }) {
     return (
         <div className="review-and-launch">
@@ -55,14 +71,13 @@ function ReviewAndLaunch(props: {
                 <label className="cat-label">Image</label>
                 <label className="edit-label" onClick={() => props.setStep(0)}>EDIT</label>
             </div>
-            {console.log(props.images)}
-            <Image images={props.images} 
-            setImages={props.setImages}
-            step={props.step} 
-            region={props.region}
-            regionsList = {props.regionsList}
-            setStep = {props.setStep} pageNameList={props.pageNameList}
-            imageCost={props.imageCost} setImageCost={props.setImageCost}
+            <Image images={props.images}
+                setImages={props.setImages}
+                step={props.step}
+                region={props.region}
+                regionsList={props.regionsList}
+                setStep={props.setStep} pageNameList={props.pageNameList}
+                imageCost={props.imageCost} setImageCost={props.setImageCost}
             />
             <div className="instance-header">
                 <label className="cat-label">Instance</label>
@@ -76,8 +91,22 @@ function ReviewAndLaunch(props: {
             </div>
             <div className="instance-header">
                 <label className="cat-label">Bandwidth</label>
-                <label className="edit-label" onClick={() => props.setStep(1)}>EDIT</label>
+                <label className="edit-label" onClick={() => props.setStep(2)}>EDIT</label>
             </div>
+            <div className="instance-details">
+                <label className="instance-name">{props.bandwidth.value}/month</label>
+            </div>
+            <div className="image-header">
+                <label className="cat-label">Storage</label>
+                <label className="edit-label" onClick={() => props.setStep(2)}>EDIT</label>
+            </div>
+            <div className="store-details">
+                <StorageAndNetwork storageCard={props.storageCard.filter((item) => item.Volume != "Root")}
+                setStorageCard={props.setStorageCard} selectedTab={props.selectedInstaces.tab} bandwidth={props.bandwidth}
+                setBandwidth={props.setBandwidth} imageCost={props.imageCost} setImageCost={props.setImageCost}
+                step={props.step}/>
+            </div>
+            
         </div>
     )
 }

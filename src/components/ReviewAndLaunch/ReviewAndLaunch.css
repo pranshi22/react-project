@@ -64,3 +64,13 @@
     margin: 0.25rem 0.5rem;
     font-size: smaller;
 }
+
+.store-details{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5rem;
+    border-radius: 0.4rem;
+    padding-left: 0.7rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0.7rem;
+}

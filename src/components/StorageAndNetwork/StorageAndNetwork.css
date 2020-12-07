@@ -154,3 +154,7 @@ transform: translateY(0.25rem);
       margin-top: 0.5rem;
       width: 18.5rem;
   }
+
+  .margin-store{
+      margin-top: 2rem;
+  }

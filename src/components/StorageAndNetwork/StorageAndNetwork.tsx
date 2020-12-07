@@ -161,7 +161,7 @@ function StorageAndNetwork(props: {
     }
 
     return (
-        <div className="vol-main-conatiner">
+        <div className={props.step === 4 ? "margin vol-main-container" : "vol-main-container"}>
             {props.storageCard.map((storage, index) => {
                 return (
                     <div className="storage-cont">
@@ -199,7 +199,7 @@ function StorageAndNetwork(props: {
                                 <input onChange={(e) => InputChangeHandler(e, storage.id)} className="input" type="text" placeholder="Some remarks" name="remarks" />
                             </div>
                         </div>
-                        <button className={index === 0 ? "display del-vol" : "del-vol"} onClick={(e) => deleteVolume(e, storage.id)}>X</button>
+                        <button className={index === 0 || props.step === 4 ? "display del-vol" : "del-vol"} onClick={(e) => deleteVolume(e, storage.id)}>X</button>
                     </div>
                 )
             })}
@@ -208,7 +208,7 @@ function StorageAndNetwork(props: {
                 <h1 className="bandwith-label">Network Bandwith Configuration</h1>
                 <div className="slidecontainer">
                     <p>Outbound Traffic</p>
-                    <input onChange={(e) => onRangeChange(e)} type="range" min="512" max={props.selectedTab === "Network Optimised" ? "2000" : "1000"} className="slider" id="myRange" />
+                    <input onChange={(e) => onRangeChange(e)} type="range" min="512" max={props.selectedTab === "Network Optimised" ? "2000" : "1000"} className="slider" id="myRange" value={props.bandwidth.value}/>
                     <div className="range-label">
                         <label>512 GB</label>
                         <label>{props.selectedTab === "Network Optimised" ? "2TB" : "1TB"}</label>
