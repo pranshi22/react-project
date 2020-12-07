@@ -1,0 +1,74 @@
+.instance-types{
+    flex-direction: row;
+    position: absolute;
+    left: 2.2rem;
+    top: 14rem;
+    display: flex;
+}
+
+.instance-tabs{
+    width: 12rem;
+    height: 3rem;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.29);;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+    margin-right: 0.5rem;
+    line-height: 2.7rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.ins-sel{
+    color: #007EFF;
+    border: 2px solid #007EFF;
+}
+
+.instance-tabs:hover {
+    cursor: pointer;
+}
+
+.create-config{
+    position: absolute;
+    left: 2.2rem;
+    top: 18.5rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #000000;
+}
+
+.option-cpu{
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+
+    /* Primary / 100 */
+
+    /* background: #007EFF; */
+    opacity: 0.04;
+}
+
+.select-cpu-mr{
+    width: 10rem;
+    margin-top: 17rem;
+    height: 2.2rem;
+    margin-left: 2.2rem;
+    font-size: 0.9rem;
+    color: #007EFF;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1rem;
+    border-radius: 0.4rem;
+    padding-left: 0.4rem;
+    outline: none;
+    border-color: #007EFF;
+    border: 1px solid #007EFF;
+}
+
+.dd-container{
+    display: flex;
+    flex-direction: row;
+}
