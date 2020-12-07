@@ -185,7 +185,7 @@ function Common() {
             <footer className="footer">
                 <div className={step === 0 ? "display nav-btns" : "nav-btns"}>
                     <button className="back-btn" onClick={() => setStep(step - 1)}>Back</button>
-                    <button className="proceed-btn" onClick={() => {
+                    <button disabled={step === pageName.length-1 ? true : false} className="proceed-btn" onClick={() => {
                         let error = false
                         if (step === 1) {
                             if (selectedInstaces.memoryValue === "" || selectedInstaces.CPUvalue === "") {
