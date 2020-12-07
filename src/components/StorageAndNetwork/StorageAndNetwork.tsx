@@ -161,7 +161,7 @@ function StorageAndNetwork(props: {
     }
 
     return (
-        <div className={props.step === 4 ? "margin vol-main-container" : "vol-main-container"}>
+        <div className={props.step === 4 ? "margin vol-main-conatiner" : "vol-main-conatiner"}>
             {props.storageCard.map((storage, index) => {
                 return (
                     <div className="storage-cont">

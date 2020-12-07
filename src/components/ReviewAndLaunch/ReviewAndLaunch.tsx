@@ -100,13 +100,11 @@ function ReviewAndLaunch(props: {
                 <label className="cat-label">Storage</label>
                 <label className="edit-label" onClick={() => props.setStep(2)}>EDIT</label>
             </div>
-            <div className="store-details">
-                <StorageAndNetwork storageCard={props.storageCard.filter((item) => item.Volume != "Root")}
+            <StorageAndNetwork storageCard={props.storageCard.filter((item) => item.Volume != "Root")}
                 setStorageCard={props.setStorageCard} selectedTab={props.selectedInstaces.tab} bandwidth={props.bandwidth}
                 setBandwidth={props.setBandwidth} imageCost={props.imageCost} setImageCost={props.setImageCost}
-                step={props.step}/>
-            </div>
-            
+                step={props.step} />
+
         </div>
     )
 }
